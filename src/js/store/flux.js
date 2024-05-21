@@ -26,10 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if(!response.ok) {
 					throw new Error(response.status, response.statusText);
 			}	
-			 
-				const data = await response.json();
-				console.log(data.result);
-				
+			 	const data = await response.json();
 				const personDetails = {
 					description: data.result.description,
 					properties: {...data.result.properties}

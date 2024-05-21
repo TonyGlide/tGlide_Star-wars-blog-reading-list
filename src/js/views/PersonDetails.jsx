@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const PersonDetails = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+
+	useEffect(() => {
+		actions.getPersonDetails(params.id)
+	}, [])
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">{store.PersonDetails.description}</h1>
+			<h1 className="display-4">{store.personDetails.properties.name}</h1>
 
 			<hr className="my-4" />
 
@@ -22,7 +26,7 @@ const PersonDetails = props => {
 };
 
 export default PersonDetails;
-
+ 
 PersonDetails.propTypes = {
 	match: PropTypes.object
 };

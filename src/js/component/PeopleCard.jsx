@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import React from "react";
+
 
 const PeopleCard = ({uid, name, url}) => {
 
@@ -10,7 +12,13 @@ return (
               <div className="card-body">
               <h5 className="card-title">{name}</h5>
               <p className="card-text"></p>
-              <a href="#" className="btn btn-primary">Go somewhere</a>
+              <Link to={`/people/${uid}`}>
+              <button className="btn btn-primary">
+                ...More
+                
+                </button>
+              </Link>
+
               </div>
         </div>
         </div>
