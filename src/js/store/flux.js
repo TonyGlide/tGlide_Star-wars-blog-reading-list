@@ -34,7 +34,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					throw new Error(response.status, response.statusText);
 			}	
 				 const data = await response.json();
-				 setStore({planets: data.results});
+				 setStore({vehicles: data.results});
 			},
 			getVehiclesDetails: () => {},
 			getFavorites: async () => {},
