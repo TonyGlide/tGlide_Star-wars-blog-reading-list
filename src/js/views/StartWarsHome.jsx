@@ -14,7 +14,7 @@ const StartWarsHome = () => {
        {/* //Characters// */}
         <div className="row mt-5" >
         <div className="col-2"></div>    
-        <div className="col-8 ">Characters</div>
+        <div className="col-8 fs-1">Characters</div>
         <div className="col-2"></div>   
         </div>  
 
@@ -33,7 +33,7 @@ const StartWarsHome = () => {
    {/* //Planets// */}
    <div className="row mt-5">
          <div className="col-2"></div>    
-         <div className="col-8 ">Planets</div>
+         <div className="col-8 fs-1">Planets</div>
          <div className="col-2"></div>   
          </div>  
 
@@ -51,7 +51,7 @@ const StartWarsHome = () => {
 {/* //Vehicles// */}
    <div className="row mt-5">
          <div className="col-2"></div>    
-         <div className="col-8 ">Vehicles</div>
+         <div className="col-8 fs-1">Vehicles</div>
          <div className="col-2"></div>   
          </div>  
 

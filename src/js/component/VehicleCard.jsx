@@ -9,7 +9,7 @@ return (
                   <img src={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`} className="card-img-top" alt={name}/>
                   <div className="card-body">
                   <h5 className="card-title">{name}</h5>
-                  <p className="card-text"></p>
+                  <p className="card-text">_________</p>
                   <a href="#" className="btn btn-primary">Go somewhere</a>
                   </div>
             </div>

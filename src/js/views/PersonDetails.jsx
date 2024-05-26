@@ -13,7 +13,9 @@ const PersonDetails = props => {
 	return (
 		<div className="jumbotron">
 			<h1 className="display-4">{store.personDetails.properties.name}</h1>
-
+			<h1 className="display-4">Gender: {store.personDetails.properties.gender}</h1>
+			<h1 className="display-4">{store.personDetails.properties.height}</h1>
+			<h1 className="display-4">{store.personDetails.properties.name}</h1>
 			<hr className="my-4" />
 
 			<Link to="/">
