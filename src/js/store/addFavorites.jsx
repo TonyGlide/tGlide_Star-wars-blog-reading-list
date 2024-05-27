@@ -3,7 +3,7 @@ const addFavorite = {
         const newFavorite = {
             name: name,
             id: uid,
-            url: '/' + '/' + uid            
+            url: uid,            
         };
        
         return newFavorite;

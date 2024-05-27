@@ -1,5 +1,5 @@
-import addFavorite  from '../store/addFavorites'
-import deleteFavorite from '../store/deleteFavorites'
+import addFavorite  from '../store/addFavorites.jsx'
+import deleteFavorite from '../store/deleteFavorites.jsx'
 
 const getState = ({ getStore, getActions, setStore }) => {
 	
@@ -12,7 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			planets: [],
 			vehicles: [],
-			favorites: []
+			favorites: [],
 		},
 		actions: {
 			getPeople: async () => {
@@ -59,15 +59,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getVehiclesDetails: () => {},
 			
 			
-			getFavorites: async () => {},
-			
-			addFavorite: (name, uid, ) => {
-				const newFavorite = addFavoriteDispatcher.addFavorite(name, uid, );
+			getFavorites: (name, uid) => {
+				const newFavorite = addFavorite.getFavorites(name, uid, );
 				setStore({ favorites: [...getStore().favorites, newFavorite] });
 				              
             },
-			deleteFavorite: (favorite) => {
-				const newFavorites = deleteFavoriteDispatcher.deleteFavorite(favorite, getStore().favorites);
+			deleteFavorites: (favorite) => {
+				const newFavorites = deleteFavorite.deleteFavorite(favorite, getStore().favorites);
 				setStore({ favorites: newFavorites });
 			
 			},
