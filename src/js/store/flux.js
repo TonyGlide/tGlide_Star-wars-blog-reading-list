@@ -1,3 +1,6 @@
+import addFavorite  from '../store/addFavorites'
+import deleteFavorite from '../store/deleteFavorites'
+
 const getState = ({ getStore, getActions, setStore }) => {
 	
 	return {
@@ -54,7 +57,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({vehicles: data.results});
 			},
 			getVehiclesDetails: () => {},
+			
+			
 			getFavorites: async () => {},
+			
+			addFavorite: (name, uid, ) => {
+				const newFavorite = addFavoriteDispatcher.addFavorite(name, uid, );
+				setStore({ favorites: [...getStore().favorites, newFavorite] });
+				              
+            },
+			deleteFavorite: (favorite) => {
+				const newFavorites = deleteFavoriteDispatcher.deleteFavorite(favorite, getStore().favorites);
+				setStore({ favorites: newFavorites });
+			
+			},
+		
+			
 			getfavoritesDetails: () => {},
 
 			}
