@@ -8,10 +8,7 @@ export const PlanetCard = ({ name, id }) => {
   return (
     <div className="card me-2 col-3 bg-dark">
       <img
-        src={
-          `https://starwars-visualguide.com/assets/img/planets/${id}.jpg` ==
-          "https://starwars-visualguide.com/assets/img/planets/1.jpg"
-            ? "https://i.imgur.com/0zP3R0i.jpeg"
+        src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg` == "https://starwars-visualguide.com/assets/img/planets/1.jpg" ? "https://i.imgur.com/0zP3R0i.jpeg"
             : `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`
         }
         className="rounded-top card-image-top"
@@ -26,14 +23,7 @@ export const PlanetCard = ({ name, id }) => {
         <div className="d-flex justify-content-between">
           <p className="text-light">
             <i
-              className={`fa-solid fa-heart-circle-${
-                store.favorites.find((favorite) => favorite.name == name)
-                  ? "check text-danger"
-                  : "plus"
-              } fs-3 addFavorite`}
-              onClick={() => {
-                actions.addFavorite(id, name);
-              }}
+              
             ></i>
           </p>
           <Link to={`/planet-detail/${id}`}>

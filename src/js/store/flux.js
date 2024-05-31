@@ -15,15 +15,14 @@ const getState = ({ getStore, getActions, setStore }) => {
   
 			  favorites: [],
   
-			  // heartColor:[{"color": grey}]
+			 
 		  },
 		  actions: {
-			  //Personajes de StarWars
+			 
 			  getCharacters: () => {
 				  fetch("https://www.swapi.tech/api/people")
 					  .then(response => {
-						  console.log(response);
-						  return response.json();
+						  console.log(response);return response.json();
 					  })
 					  .then((data) => {
 						  console.log("Data: ", data)
@@ -38,32 +37,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 		favorites: [],
 	  },
 	  actions: {
-		//Personajes de StarWars
+		
 		getCharacters: () => {
 		  fetch("https://www.swapi.tech/api/people")
 			.then((response) => {
-			  console.log(response);
+			  
 			  return response.json();
 			})
 			.then((data) => {
-			  console.log("Data: ", data);
-			  console.log(data.results);
+			 
 			  setStore({ characters: data.results });
 			})
 			.catch((error) => {
 			  console.log(error);
 			});
 		},
-  
-		//Planetas de StarWars
+  	
 		getPlanets: () => {
 		  fetch("https://www.swapi.tech/api/planets")
 			.then((response) => {
-			  console.log(response);
+			 
 			  return response.json();
 			})
 			.then((data) => {
-			  console.log("Data: ", data);
+			  
 			  console.log(data.results);
 			  setStore({ planets: data.results });
 			})
@@ -72,16 +69,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			});
 		},
   
-		//Vehículos de StarWars
 		getStarships: () => {
 		  fetch("https://www.swapi.tech/api/starships")
 			.then((response) => {
-			  console.log(response);
+			  
 			  return response.json();
 			})
 			.then((data) => {
-			  console.log("Data: ", data);
-			  console.log(data.results);
+			  			 
 			  setStore({ starships: data.results });
 			})
 			.catch((error) => {
@@ -89,7 +84,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			});
 		},
   
-		//Detalles de personajes
 		getCharacterDetail: (id) => {
 		  fetch(`https://www.swapi.tech/api/people/${id}`)
 			.then((response) => response.json())
@@ -101,7 +95,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			});
 		},
   
-		//Detalles de planetas
 		getPlanetDetail: (id) => {
 		  fetch(`https://www.swapi.tech/api/planets/${id}`)
 			.then((response) => response.json())
@@ -113,7 +106,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			});
 		},
   
-		//Detalles de naves
 		getStarshipDetail: (id) => {
 		  fetch(`https://www.swapi.tech/api/starships/${id}`)
 			.then((response) => response.json())
@@ -125,7 +117,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			});
 		},
   
-		//Agregar favoritos
 		addFavorite: (uid, name) => {
 		  const favorite = {
 			id: uid,
@@ -135,19 +126,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  if (index == -1) {
 			const newFavorite = [...getStore().favorites, favorite];
 			setStore({ favorites: newFavorite });
-			console.log("Esto es favoritos: ", getStore().favorites);
+		
 		  } else {
 			getActions().deleteFavorite(name);
 		  }
 		},
   
-		//Borrar favoritos
 		deleteFavorite: (name) => {
 		  const updateFavorite = getStore().favorites.filter(
 			(favorite) => favorite.name != name
 		  );
 		  getStore().favorites = updateFavorite;
-		  console.log("Este es updateFavorite: ", updateFavorite);
 		  setStore({ favorites: updateFavorite });
 		},
 		  }

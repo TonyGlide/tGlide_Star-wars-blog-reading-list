@@ -29,14 +29,7 @@ export const StarshipCard = ({ name, id }) => {
         <div className="d-flex justify-content-between">
           <p className="text-light">
             <i
-              className={`fa-solid fa-heart-circle-${
-                store.favorites.find((favorite) => favorite.name == name)
-                  ? "check text-danger"
-                  : "plus"
-              } fs-3 addFavorite`}
-              onClick={() => {
-                actions.addFavorite(id, name);
-              }}
+          
             ></i>
           </p>
           <Link to={`/starship-detail/${id}`}>

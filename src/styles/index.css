@@ -1,12 +1,10 @@
-/* 
-    General Styles
-*/
+
 #planets {
-    color: #fc4b08;
+    color: hsl(56, 71%, 46%);
 }
 
 #starships {
-    color: #ffc340;
+    color: hsl(56, 71%, 46%);
 }
 
 body {

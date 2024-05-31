@@ -15,24 +15,19 @@ export const PlanetDetail = () => {
             <div className="container mt-5 p-3 border border-2 rounded-2 border-danger bg-dark">
                 <div className="d-flex row mb-5">
                     <div className="col">
-                        <img src={`https://starwars-visualguide.com/assets/img/planets/${params.id}.jpg` == "https://starwars-visualguide.com/assets/img/planets/1.jpg" ?
-                            "https://starwars-visualguide.com/assets/img/placeholder.jpg" :
-                            `https://starwars-visualguide.com/assets/img/planets/${params.id}.jpg`}
+                        <img src="https://i.imgur.com/0zP3R0i.jpeg"
                             className="m-1 rounded" />
                     </div>
                     <div className="col">
                         <h2 className="text-center text-danger fw-bold" id="planets">{store.planetDetail.name}</h2>
                         <p className="fw-lighter text-start mt-4 fs-4 text-light">
-                            Star Wars, conocida también en español como La guerra de las galaxias,
-                            es una franquicia y universo compartido de fantasía compuesta primordialmente
-                            de una serie de películas concebidas por el cineasta estadounidense George Lucas
-                            en la década de 1970, y producidas y distribuidas inicialmente por 20th Century Fox
-                            y posteriormente por The Walt Disney Company a partir de 2012. Su trama describe
-                            las vivencias de un grupo de personajes que habitan en una galaxia ficticia e
-                            interactúan con elementos como «la Fuerza», un campo de energía metafísico y
-                            omnipresente que posee un «lado luminoso» impulsado por la sabiduría, la nobleza y
-                            la justicia y utilizado por los Jedi, y un «lado oscuro» usado por los Sith y provocado
-                            por la ira, el miedo, el odio y la desesperación.
+                        Star Wars is a space opera franchise that takes place in a fictional galaxy 
+                        "a long time ago" where humans, aliens, and robots coexist. The story follows
+                         characters on their adventures across multiple eras, often involving struggles
+                          between good and evil. The original trilogy, which began with Star Wars: A New Hope 
+                          in 1977, tells the story of Luke Skywalker and Leia Organa as they fight against the
+                           Galactic Empire. The sequel trilogy focuses on Rey, a new generation of Jedi who faces
+                            off against Kylo Ren, the grandson of Luke's father Anakin.
                         </p>
                     </div>
                 </div>
