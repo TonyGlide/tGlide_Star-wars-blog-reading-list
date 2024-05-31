@@ -1,49 +1,42 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import Dropdown from 'react-bootstrap/Dropdown';
-import Badge from 'react-bootstrap/Badge';
-
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
-		
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">
-				<img
-            src="https://seeklogo.com/images/S/Star_Wars-logo-97DD55947B-seeklogo.com.png"
-            alt="Star Wars Logo"
-            className="mr-2"
-            style={{ height: "60px" }}
-          />
-				</span>
-			</Link>
-			
-			<Dropdown>
-				<Dropdown.Toggle variant="light" id="dropdown-basic" >
-					Favorites <Badge pill bg="light" text="dark">{store.favorites.length}</Badge>
-				</Dropdown.Toggle>
-				{store.favorites.length > 0 ? (
-					<Dropdown.Menu>
-						{store.favorites.map((favorite) => (
-							<Link key={favorite.uid} className="d-flex gap-2 w-100 justify-content-between py-1 px-3" to={favorite.url}>
-								{favorite.name}
-								<div className="delete-task text-danger" onClick={(e) => actions.deleteFavorite(favorite)}>
-									<FontAwesomeIcon icon={faX} />
-								</div>
-							</Link>
-						))}
-					</Dropdown.Menu>
-				) : (
-					<Dropdown.Menu className="py-2 px-3 w-100">There are no favorites!</Dropdown.Menu>
-				)}
-			</Dropdown>
-
-		
-			
+			<div className="container-fluid">
+				<Link to="/">
+					<img src="https://th.bing.com/th/id/R.7eca8dbac69cef99ca14241205bf79cc?rik=%2bdJOlqlq2E4IYg&riu=http%3a%2f%2fpngimg.com%2fuploads%2fstar_wars_logo%2fstar_wars_logo_PNG40.png&ehk=VxT9yQBuASJxGdhYTy5YSgu5x4iKDoxPKK1T1mk3Fm8%3d&risl=&pid=ImgRaw&r=0"
+						style={{ width: 100, height: 50 }} 
+						className="logo"/>
+				</Link>
+				<div className="dropstart">
+					<button className="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Favorites
+					</button>
+					<ul className="dropdown-menu dropdown-menu-end">
+						{store.favorites.map((favorite, index) => {
+							return (
+								<li className="dropdown-item" key={index} style={{ color: "#756b6b" }}>
+									<div className="favorites d-flex justify-content-between">
+										<span>{favorite.name}</span>
+										<div>
+											<i className="fa-solid fa-heart-circle-minus"
+												onClick={() => {
+													actions.deleteFavorite(favorite.name)
+												}}
+												style={{ color: "#756b6b" }}></i>
+										</div>
+									</div>
+									<li><hr className="dropdown-divider" /></li>
+								</li>
+							)
+						})}
+					</ul>
+				</div>
+			</div>
 		</nav>
 	);
 };

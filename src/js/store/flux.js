@@ -1,80 +1,157 @@
-import addFavorite  from '../store/addFavorites.jsx'
-import deleteFavorite from '../store/deleteFavorites.jsx'
-
 const getState = ({ getStore, getActions, setStore }) => {
-	
 	return {
-		store: {
-			people: [],
-			personDetails: {
-				description: "",
-				properties: {}
-			},
-			planets: [],
-			vehicles: [],
-			favorites: [],
+	  store: {
+		characters: [],
+  
+		planets: [],
+  
+		starships: [],
+  
+		characterDetail: {},
+  
+		planetDetail: {},
+  
+		starshipDetail: {},
+  
+			  favorites: [],
+  
+			  // heartColor:[{"color": grey}]
+		  },
+		  actions: {
+			  //Personajes de StarWars
+			  getCharacters: () => {
+				  fetch("https://www.swapi.tech/api/people")
+					  .then(response => {
+						  console.log(response);
+						  return response.json();
+					  })
+					  .then((data) => {
+						  console.log("Data: ", data)
+						  console.log(data.results)
+						  setStore({ characters: data.results })
+					  })
+					  .catch((error) => {
+						  console.log(error)
+					  })
+			  },
+  
+		favorites: [],
+	  },
+	  actions: {
+		//Personajes de StarWars
+		getCharacters: () => {
+		  fetch("https://www.swapi.tech/api/people")
+			.then((response) => {
+			  console.log(response);
+			  return response.json();
+			})
+			.then((data) => {
+			  console.log("Data: ", data);
+			  console.log(data.results);
+			  setStore({ characters: data.results });
+			})
+			.catch((error) => {
+			  console.log(error);
+			});
 		},
-		actions: {
-			getPeople: async () => {
-				const response = await fetch("https://www.swapi.tech/api/people/");
-			if(!response.ok) {
-				throw new Error(response.status, response.statusText);
-			}	
-				const data = await response.json();
-				setStore({people: data.results});
-			
-			},
-			getPersonDetails: async (id) => {
-				const response = await fetch(`https://www.swapi.tech/api/people/${id}`);
-				if(!response.ok) {
-					throw new Error(response.status, response.statusText);
-			}	
-			 	const data = await response.json();
-				const personDetails = {
-					description: data.result.description,
-					properties: {...data.result.properties}
-				}
-				setStore({personDetails: personDetails});
-
-
-			},
-			
-			getPlanets: async () => {
-				const response = await fetch("https://www.swapi.tech/api/planets/");
-				if(!response.ok) {
-					throw new Error(response.status, response.statusText);
-			}	
-				const data = await response.json();
-				setStore({planets: data.results});
-			},
-			getPlanetsDetails: () => {},
-			getVehicles: async () => {
-				const response = await fetch("https://www.swapi.tech/api/vehicles/");
-				if(!response.ok) {
-					throw new Error(response.status, response.statusText);
-			}	
-				const data = await response.json();
-				setStore({vehicles: data.results});
-			},
-			getVehiclesDetails: () => {},
-			
-			
-			getFavorites: (name, uid) => {
-				const newFavorite = addFavorite.getFavorites(name, uid, );
-				setStore({ favorites: [...getStore().favorites, newFavorite] });
-				              
-            },
-			deleteFavorites: (favorite) => {
-				const newFavorites = deleteFavorite.deleteFavorite(favorite, getStore().favorites);
-				setStore({ favorites: newFavorites });
-			
-			},
-		
-			
-			getfavoritesDetails: () => {},
-
-			}
-		}
-	};
-
-	export default getState;
+  
+		//Planetas de StarWars
+		getPlanets: () => {
+		  fetch("https://www.swapi.tech/api/planets")
+			.then((response) => {
+			  console.log(response);
+			  return response.json();
+			})
+			.then((data) => {
+			  console.log("Data: ", data);
+			  console.log(data.results);
+			  setStore({ planets: data.results });
+			})
+			.catch((error) => {
+			  console.log(error);
+			});
+		},
+  
+		//Vehículos de StarWars
+		getStarships: () => {
+		  fetch("https://www.swapi.tech/api/starships")
+			.then((response) => {
+			  console.log(response);
+			  return response.json();
+			})
+			.then((data) => {
+			  console.log("Data: ", data);
+			  console.log(data.results);
+			  setStore({ starships: data.results });
+			})
+			.catch((error) => {
+			  console.log(error);
+			});
+		},
+  
+		//Detalles de personajes
+		getCharacterDetail: (id) => {
+		  fetch(`https://www.swapi.tech/api/people/${id}`)
+			.then((response) => response.json())
+			.then((data) => {
+			  setStore({ characterDetail: data.result.properties });
+			})
+			.catch((error) => {
+			  error;
+			});
+		},
+  
+		//Detalles de planetas
+		getPlanetDetail: (id) => {
+		  fetch(`https://www.swapi.tech/api/planets/${id}`)
+			.then((response) => response.json())
+			.then((data) => {
+			  setStore({ planetDetail: data.result.properties });
+			})
+			.catch((error) => {
+			  error;
+			});
+		},
+  
+		//Detalles de naves
+		getStarshipDetail: (id) => {
+		  fetch(`https://www.swapi.tech/api/starships/${id}`)
+			.then((response) => response.json())
+			.then((data) => {
+			  setStore({ starshipDetail: data.result.properties });
+			})
+			.catch((error) => {
+			  error;
+			});
+		},
+  
+		//Agregar favoritos
+		addFavorite: (uid, name) => {
+		  const favorite = {
+			id: uid,
+			name: name,
+		  };
+		  const index = getStore().favorites.findIndex((fav) => fav.name == name);
+		  if (index == -1) {
+			const newFavorite = [...getStore().favorites, favorite];
+			setStore({ favorites: newFavorite });
+			console.log("Esto es favoritos: ", getStore().favorites);
+		  } else {
+			getActions().deleteFavorite(name);
+		  }
+		},
+  
+		//Borrar favoritos
+		deleteFavorite: (name) => {
+		  const updateFavorite = getStore().favorites.filter(
+			(favorite) => favorite.name != name
+		  );
+		  getStore().favorites = updateFavorite;
+		  console.log("Este es updateFavorite: ", updateFavorite);
+		  setStore({ favorites: updateFavorite });
+		},
+		  }
+	  }
+  };
+  
+  export default getState;

@@ -2,24 +2,27 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const PlanetCard = ({ name, id }) => {
+export const StarshipCard = ({ name, id }) => {
   const { store, actions } = useContext(Context);
 
   return (
     <div className="card me-2 col-3 bg-dark">
       <img
         src={
-          `https://starwars-visualguide.com/assets/img/planets/${id}.jpg` ==
-          "https://starwars-visualguide.com/assets/img/planets/1.jpg"
-            ? "https://i.imgur.com/0zP3R0i.jpeg"
-            : `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`
+          `${id}` == 2
+            ? "https://i.imgur.com/7Di3y5w.jpeg"
+            : `${id}` == 3
+            ? "https://i.imgur.com/yw3Gstj.jpeg"
+            : `${id}` == 17
+            ? "https://i.imgur.com/HzKyhvj.jpeg"
+            : `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`
         }
-        className="rounded-top card-image-top"
+        className="rounded-top card-img-top"
       />
       <div className="card-body">
         <h5
           className="card-title mb-4 fw-lighter font-monospace fs-6 fs-md-4"
-          id="planets"
+          id="starships"
         >
           {name}
         </h5>
@@ -36,8 +39,8 @@ export const PlanetCard = ({ name, id }) => {
               }}
             ></i>
           </p>
-          <Link to={`/planet-detail/${id}`}>
-            <button className="btn btn-outline-danger btn-sm">
+          <Link to={`/starship-detail/${id}`}>
+            <button className="btn btn-outline-warning btn-sm">
               More <i className="fa-solid fa-angles-right"></i>
             </button>
           </Link>

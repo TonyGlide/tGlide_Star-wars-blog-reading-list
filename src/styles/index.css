@@ -1,3 +1,34 @@
 /* 
     General Styles
 */
+#planets {
+    color: #fc4b08;
+}
+
+#starships {
+    color: #ffc340;
+}
+
+body {
+    background-image: url("https://live.staticflickr.com/7827/33639777908_ecb3b102d9_b.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.favorites .fa-heart-circle-minus{
+    visibility: hidden;
+}
+
+.favorites:hover .fa-heart-circle-minus{
+    visibility: visible;
+}
+
+.addFavorite {
+    color: grey;
+}.addFavorite:hover {
+    transform: scale(1.2);
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
