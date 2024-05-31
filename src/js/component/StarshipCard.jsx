@@ -33,9 +33,9 @@ export const StarshipCard = ({ name, id }) => {
             ></i>
           </p>
           <Link to={`/starship-detail/${id}`}>
-            <button className="btn btn-outline-warning btn-sm">
-              More <i className="fa-solid fa-angles-right"></i>
-            </button>
+          <button className="btn btn-dark btn-outline">
+                  More <i className="fa-solid fa-angles-right"></i>
+                </button>
           </Link>
         </div>
       </div>
