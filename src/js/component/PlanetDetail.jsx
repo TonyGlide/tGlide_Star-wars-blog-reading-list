@@ -19,7 +19,7 @@ export const PlanetDetail = () => {
                             className="m-1 rounded" />
                     </div>
                     <div className="col">
-                        <h2 className="text-center text-danger fw-bold" id="planets">{store.planetDetail.name}</h2>
+                        <h2 className="text-center text-secondary fw-bold" id="planets">{store.planetDetail.name}</h2>
                         <p className="fw-lighter text-start mt-4 fs-4 text-light">
                         Star Wars is a space opera franchise that takes place in a fictional galaxy 
                         "a long time ago" where humans, aliens, and robots coexist. The story follows
@@ -35,34 +35,34 @@ export const PlanetDetail = () => {
                 <div className="container mt-5">
                     <div className="d-flex justify-content-between row">
                         <div className="col">
-                            <p className="text-danger fw-bold text-center" id="planets">Diameter</p>
+                            <p className="text-secondary fw-bold text-center" id="planets">Diameter</p>
                             <p className="text-center fw-lighter text-light">{store.planetDetail.diameter}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center" id="planets">Gravity</p>
+                            <p className="text-secondary fw-bold text-center" id="planets">Gravity</p>
                             <p className="text-center fw-lighter text-light">{store.planetDetail.gravity}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center" id="planets">Population</p>
+                            <p className="text-secondary fw-bold text-center" id="planets">Population</p>
                             <p className="text-center fw-lighter text-light">{store.planetDetail.population}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center" id="planets">Climate</p>
+                            <p className="text-secondary fw-bold text-center" id="planets">Climate</p>
                             <p className="text-center fw-lighter text-light">{store.planetDetail.climate}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center" id="planets">Terrain</p>
+                            <p className="text-secondary fw-bold text-center" id="planets">Terrain</p>
                             <p className="text-center fw-lighter text-light">{store.planetDetail.terrain}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center" id="planets">Surface Water</p>
+                            <p className="text-secondary fw-bold text-center" id="planets">Surface Water</p>
                             <p className="text-center fw-lighter text-light">{store.planetDetail.surface_water}</p>
                         </div>
                     </div>
                 </div>
                 <div className="d-flex justify-content-end">
                     <Link to="/">
-                        <button className="btn btn-outline-danger btn-sm"><i className="fa-solid fa-angles-left"></i> Back</button>
+                        <button className="btn btn-outline-secondary btn-sm"><i className="fa-solid fa-angles-left"></i> Back</button>
                     </Link>
                 </div>
             </div>

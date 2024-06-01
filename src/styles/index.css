@@ -1,17 +1,12 @@
 
 #planets {
-    color: hsl(56, 71%, 46%);
+    color: hsl(60, 1%, 21%);
 }
 
 #starships {
-    color: hsl(56, 71%, 46%);
+    color: hsl(60, 1%, 21%);
 }
 
-body {
-    background-image: url("https://live.staticflickr.com/7827/33639777908_ecb3b102d9_b.jpg");
-    background-repeat: repeat;
-    background-size: cover;
-}
 
 .favorites .fa-heart-circle-minus{
     visibility: hidden;

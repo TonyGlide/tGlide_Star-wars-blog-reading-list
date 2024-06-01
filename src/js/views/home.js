@@ -12,7 +12,7 @@ export const Home = () => {
 	return (
 		<>
 			<div className="container-fluid mt-5">
-				<p className="fw-lighter font-monospace fs-4 text-danger">Characters</p>
+				<p className="fw-lighter font-monospace fs-4 text-secondary">Characters</p>
 				<div className="d-flex flex-row flex-nowrap overflow-auto">
 					{store.characters && store.characters.map((character, index) => {
 						return (

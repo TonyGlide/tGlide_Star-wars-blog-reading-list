@@ -26,7 +26,7 @@ export const StarshipDetail = () => {
                             className="m-1 rounded" />
                     </div>
                     <div className="col">
-                        <h2 className="text-center fw-bold text-warning">{store.starshipDetail.name}</h2>
+                        <h2 className="text-center fw-bold text-secondary">{store.starshipDetail.name}</h2>
                         <p className="fw-lighter text-start mt-4 fs-4 text-light">
                         Star Wars is a space opera franchise that takes place in a fictional galaxy 
                         "a long time ago" where humans, aliens, and robots coexist. The story follows
@@ -42,34 +42,34 @@ export const StarshipDetail = () => {
                 <div className="container mt-5">
                     <div className="d-flex justify-content-between row">
                         <div className="col">
-                            <p className="fw-bold text-center text-warning">Model</p>
+                            <p className="fw-bold text-center text-secondary">Model</p>
                             <p className="text-center fw-lighter text-light">{store.starshipDetail.model}</p>
                         </div>
                         <div className="col">
-                            <p className="fw-bold text-center text-warning">Starship Class</p>
+                            <p className="fw-bold text-center text-secondary">Starship Class</p>
                             <p className="text-center fw-lighter text-light">{store.starshipDetail.starship_class}</p>
                         </div>
                         <div className="col">
-                            <p className="fw-bold text-center text-warning">Manufacturer</p>
+                            <p className="fw-bold text-center text-secondary">Manufacturer</p>
                             <p className="text-center fw-lighter text-light">{store.starshipDetail.manufacturer}</p>
                         </div>
                         <div className="col">
-                            <p className="fw-bold text-center text-warning">Length</p>
+                            <p className="fw-bold text-center text-secondary">Length</p>
                             <p className="text-center fw-lighter text-light">{store.starshipDetail.length}</p>
                         </div>
                         <div className="col">
-                            <p className="fw-bold text-center text-warning">Crew</p>
+                            <p className="fw-bold text-center text-secondary">Crew</p>
                             <p className="text-center fw-lighter text-light">{store.starshipDetail.crew}</p>
                         </div>
                         <div className="col">
-                            <p className="fw-bold text-center text-warning">Passengers</p>
+                            <p className="fw-bold text-center text-secondary">Passengers</p>
                             <p className="text-center fw-lighter text-light">{store.starshipDetail.passengers}</p>
                         </div>
                     </div>
                 </div>
                 <div className="d-flex justify-content-end">
                     <Link to="/">
-                        <button className="btn btn-outline-warning btn-sm"><i className="fa-solid fa-angles-left"></i> Back</button>
+                        <button className="btn btn-outline-secondary btn-sm"><i className="fa-solid fa-angles-left"></i> Back</button>
                     </Link>
                 </div>
             </div>

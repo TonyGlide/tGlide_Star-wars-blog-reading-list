@@ -36,34 +36,34 @@ export const CharacterDetail = () => {
                 <div className="container mt-5">
                     <div className="d-flex justify-content-between row">
                         <div className="col">
-                            <p className="text-danger fw-bold text-center">Name</p>
+                            <p className="text-secondary fw-bold text-center">Name</p>
                             <p className="text-center fw-lighter text-light">{store.characterDetail.name}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center">Birth Year</p>
+                            <p className="text-secondary fw-bold text-center">Birth Year</p>
                             <p className="text-center fw-lighter text-light">{store.characterDetail.birth_year}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center">Gender</p>
+                            <p className="text-secondary fw-bold text-center">Gender</p>
                             <p className="text-center fw-lighter text-light">{store.characterDetail.gender}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center">Height</p>
+                            <p className="text-secondary fw-bold text-center">Height</p>
                             <p className="text-center fw-lighter text-light">{store.characterDetail.height}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center">Skin Color</p>
+                            <p className="text-secondary fw-bold text-center">Skin Color</p>
                             <p className="text-center fw-lighter text-light">{store.characterDetail.skin_color}</p>
                         </div>
                         <div className="col">
-                            <p className="text-danger fw-bold text-center">Eye Color</p>
+                            <p className="text-secondary fw-bold text-center">Eye Color</p>
                             <p className="text-center fw-lighter text-light">{store.characterDetail.eye_color}</p>
                         </div>
                     </div>
                 </div>
                 <div className="d-flex justify-content-end">
                     <Link to="/">
-                        <button className="btn btn-outline-danger btn-sm"><i className="fa-solid fa-angles-left"></i> Back</button>
+                        <button className="btn btn-outline-secondary btn-sm"><i className="fa-solid fa-angles-left"></i> Back</button>
                     </Link>
                 </div>
             </div>

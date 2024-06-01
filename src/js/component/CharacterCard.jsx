@@ -15,7 +15,7 @@ export const CharacterCard = ({ name, id }) => {
         <h5 className="card-title mb-4 fw-lighter font-monospace fs-6 fs-md-4 text-white">
           {name}
         </h5>
-        <div className="d-flex content-between">
+        <div className="d-flex col-2 ">
           <p className="text-light">
 
             <button className={`btn btn-outline-warning btn-sm${store.favorites.find((favorite) => favorite.name == name) ? "check text-danger"
